@@ -25,7 +25,7 @@ let graphSketch = (p) => {
 
   /** Reset and restart the graph. */
   p.reset = () => {
-    p.background(255);
+    p.background(0, 0, 0);
     currentXCoordinatePixel = 0;
     prev_x = 0;
     prev_y = {

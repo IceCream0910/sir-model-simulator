@@ -6,17 +6,17 @@ let arrayIndex = randomDataArraySize;
 
 const fastRandom = window.crypto
   ? () => {
-      let nextArrayIndex = arrayIndex;
+    let nextArrayIndex = arrayIndex;
 
-      if (nextArrayIndex === randomDataArraySize) {
-        crypto.getRandomValues(randomData);
-        nextArrayIndex = 0;
-      } else {
-        nextArrayIndex = nextArrayIndex + 1;
-      }
-
-      return randomData[nextArrayIndex] / divisor;
+    if (nextArrayIndex === randomDataArraySize) {
+      crypto.getRandomValues(randomData);
+      nextArrayIndex = 0;
+    } else {
+      nextArrayIndex = nextArrayIndex + 1;
     }
+
+    return randomData[nextArrayIndex] / divisor;
+  }
   : Math.random;
 
 let sketch = (p) => {
@@ -28,7 +28,7 @@ let sketch = (p) => {
   let mobHeight = Math.floor(mobWidth * (3 / 4));
   let simCanvasSize =
     screen.availWidth > 672
-      ? { width: 640, height: 480 }
+      ? { width: 640, height: 380 }
       : { width: mobWidth, height: mobHeight };
   /**
    * Correlates the {@link status} with the relative rgb color.
@@ -221,7 +221,7 @@ let sketch = (p) => {
   };
 
   p.draw = function () {
-    p.background(0, 87, 255); //0057ff
+    p.background(54, 69, 99); //0057ff
     p.checkForRecovered();
     balls.forEach((ball) => {
       p.push();
