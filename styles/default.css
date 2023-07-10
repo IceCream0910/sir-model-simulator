@@ -264,7 +264,7 @@ button {
 }
 
 button:hover {
-    background-color: black;
+    background-color: #4f5cb4;
     color: #ffffff;
 }
 
